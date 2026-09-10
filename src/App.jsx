@@ -1,9 +1,14 @@
+import Navbar from "./components/Navbar";
+
 function App() {
   return (
-    <div className="min-h-screen bg-slate-100 flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-pink-600">Tailwind is working!</h1>
+    <div className="min-h-screen bg-slate-50">
+      <Navbar />
+      <main>
+        <h1>Devstack</h1>
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
