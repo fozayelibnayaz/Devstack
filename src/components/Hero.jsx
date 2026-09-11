@@ -17,7 +17,7 @@ function Hero() {
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
             <a
               href="#technologies"
-              className="rounded-lg bg-brand px-6 py-3 text-center text-sm font-semibold text-white shadow-md hover:opacity-90"
+              className="rounded-lg bg-brand-btn px-6 py-3 text-center text-sm font-semibold text-white shadow-md hover:opacity-90"
             >
               Explore Technologies
             </a>

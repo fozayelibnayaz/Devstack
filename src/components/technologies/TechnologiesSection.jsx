@@ -1,9 +1,12 @@
 import { use } from "react";
+import { technologiesPromise } from "../../data/technologies";
+import useStack from "../../hooks/useStack";
 import TechnologyCard from "./TechnologyCard";
 import StackSidebar from "./StackSidebar";
 
-function TechnologiesSection({ technologiesPromise, stack, onAdd, onRemove, onRemoveAll }) {
+function TechnologiesSection() {
   const technologies = use(technologiesPromise);
+  const { stack, addToStack, removeFromStack, removeAll } = useStack();
 
   return (
     <section id="technologies" className="max-w-7xl mx-auto px-4 pb-20">
@@ -21,13 +24,13 @@ function TechnologiesSection({ technologiesPromise, stack, onAdd, onRemove, onRe
               key={tech.id}
               tech={tech}
               isInStack={stack.some((item) => item.id === tech.id)}
-              onAdd={onAdd}
+              onAdd={addToStack}
             />
           ))}
         </div>
 
         <div className="lg:col-span-1">
-          <StackSidebar stack={stack} onRemove={onRemove} onRemoveAll={onRemoveAll} />
+          <StackSidebar stack={stack} onRemove={removeFromStack} onRemoveAll={removeAll} />
         </div>
       </div>
     </section>

@@ -3,10 +3,14 @@ export default {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     extend: {
+      colors: {
+        "brand-pink": "#D91B7E",
+      },
       backgroundImage: {
         brand: "linear-gradient(90deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%)",
+        "brand-btn": "linear-gradient(90deg, #f97316 0%, #ec4899 100%)",
       },
     },
   },
   plugins: [],
-}
+};

@@ -34,7 +34,7 @@ function Navbar() {
             </a>
             <a
               href="#home"
-              className="px-4 py-2 rounded-full bg-brand text-white text-sm font-semibold hover:opacity-90"
+              className="px-4 py-2 rounded-full bg-brand-pink text-white text-sm font-semibold hover:opacity-90"
             >
               Sign Up
             </a>
