@@ -14,16 +14,16 @@ function Hero() {
             Explore frontend, backend, database, and tooling options, compare them side by side,
             and put together the stack that fits your next project.
           </p>
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
+             <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start md:gap-4">
             <a
               href="#technologies"
-              className="rounded-lg bg-brand-btn px-6 py-3 text-center text-sm font-semibold text-white shadow-md hover:opacity-90"
+              className="rounded-lg bg-brand-btn px-4 py-3 text-center text-sm font-semibold text-white shadow-md hover:opacity-90 sm:px-6"
             >
               Explore Technologies
             </a>
             <a
               href="#technologies"
-              className="rounded-lg border border-slate-200 bg-white px-6 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50"
+              className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 sm:px-6"
             >
               Learn More
             </a>
