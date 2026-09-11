@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TechnologiesSection from "./components/TechnologiesSection";
+import Footer from "./components/Footer";
 
 const technologiesPromise = fetch("/data/technologies.json")
   .then((response) => response.json())
@@ -49,6 +50,7 @@ function App() {
           />
         </Suspense>
       </main>
+          <Footer />
 
       <ToastContainer position="top-right" autoClose={2500} pauseOnHover theme="light" />
     </div>
