@@ -1,7 +1,8 @@
 import { use } from "react";
 import TechnologyCard from "./TechnologyCard";
+import StackSidebar from "./StackSidebar";
 
-function TechnologiesSection({ technologiesPromise, stack, onAdd }) {
+function TechnologiesSection({ technologiesPromise, stack, onAdd, onRemove, onRemoveAll }) {
   const technologies = use(technologiesPromise);
 
   return (
@@ -25,7 +26,9 @@ function TechnologiesSection({ technologiesPromise, stack, onAdd }) {
           ))}
         </div>
 
-        <div className="lg:col-span-1"></div>
+        <div className="lg:col-span-1">
+          <StackSidebar stack={stack} onRemove={onRemove} onRemoveAll={onRemoveAll} />
+        </div>
       </div>
     </section>
   );

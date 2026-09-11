@@ -15,6 +15,14 @@ function App() {
     setStack([...stack, tech]);
   }
 
+  function removeFromStack(tech) {
+    setStack(stack.filter((item) => item.id !== tech.id));
+  }
+
+  function removeAll() {
+    setStack([]);
+  }
+
   return (
     <div className="min-h-screen bg-slate-50">
       <Navbar />
@@ -25,6 +33,8 @@ function App() {
             technologiesPromise={technologiesPromise}
             stack={stack}
             onAdd={addToStack}
+            onRemove={removeFromStack}
+            onRemoveAll={removeAll}
           />
         </Suspense>
       </main>
