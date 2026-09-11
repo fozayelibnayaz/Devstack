@@ -1,6 +1,7 @@
 import { use } from "react";
+import TechnologyCard from "./TechnologyCard";
 
-function TechnologiesSection({ technologiesPromise, stack }) {
+function TechnologiesSection({ technologiesPromise, stack, onAdd }) {
   const technologies = use(technologiesPromise);
 
   return (
@@ -12,9 +13,20 @@ function TechnologiesSection({ technologiesPromise, stack }) {
         <p className="mt-2 text-slate-500">Pick one technology per category to build your ideal stack.</p>
       </div>
 
-      <p className="py-24 text-center text-slate-400">
-        {technologies.length} technologies loaded - cards come in the next part.
-      </p>
+      <div className="grid gap-8 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 lg:col-span-3">
+          {technologies.map((tech) => (
+            <TechnologyCard
+              key={tech.id}
+              tech={tech}
+              isInStack={stack.some((item) => item.id === tech.id)}
+              onAdd={onAdd}
+            />
+          ))}
+        </div>
+
+        <div className="lg:col-span-1"></div>
+      </div>
     </section>
   );
 }

@@ -10,15 +10,22 @@ const technologiesPromise = fetch("/data/technologies.json")
 function App() {
   const [stack, setStack] = useState([]);
 
+  function addToStack(tech) {
+    if (stack.some((item) => item.id === tech.id)) return;
+    setStack([...stack, tech]);
+  }
+
   return (
     <div className="min-h-screen bg-slate-50">
       <Navbar />
       <main>
         <Hero />
-        <Suspense
-          fallback={<p className="py-24 text-center text-slate-400">Loading technologies…</p>}
-        >
-          <TechnologiesSection technologiesPromise={technologiesPromise} stack={stack} />
+        <Suspense fallback={<p className="py-24 text-center text-slate-400">Loading technologies…</p>}>
+          <TechnologiesSection
+            technologiesPromise={technologiesPromise}
+            stack={stack}
+            onAdd={addToStack}
+          />
         </Suspense>
       </main>
     </div>
